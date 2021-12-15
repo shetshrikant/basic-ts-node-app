@@ -7,13 +7,25 @@
 `typeorm migration:run`
 6. The app consists of the following APIs
 
-METHOD  ENDPOINT                            DESCRIPTION
-GET     /companies                          List of all companies
-GET     /companies?name=SEARCH_BY_NAME      List of all companies based on name provided for search
-GET     /companies/:id                      Get company by id
-POST    /companies                          Create a company
-POST    /companies/:companyId/teams         Create a team in company with id = companyID
-GET     /teams                              List of teams, grouped company-wise
+    METHOD | ENDPOINT | DESCRIPTION
+
+- GET /companies
+  - List of all companies
+
+- GET /companies?name=SEARCH_BY_NAME
+  - List of all companies based on name provided for search
+
+- GET /companies/:id
+  - Get company by id
+
+- POST /companies
+  - Create a company
+
+- POST /companies/:companyId/teams
+  - Create a team in company with id = companyID
+
+- GET /teams
+  - List of teams, grouped company-wise
 
 7. All routes have isAuthenticated middleware. In real app, this middleware will check whether the token in the header is valid,
 by comparing the token stored in the database.
