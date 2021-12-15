@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "1144f673-26d7-4395-b99a-58b91e1d85b6",
+		"name": "basic-ts-node-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create company",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Infosys\",\n    \"inceptionDate\": \"2021-12-31\",\n    \"ceoFirstName\": \"Narayan\",\n    \"ceoLastName\": \"Murthy\",\n    \"address\": \"Ttest address\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3010/companies",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search company by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3010/companies?name=JSW",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"companies"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "JSW"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List companies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3010/companies",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create team",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"teamLeadLastName\" : \"333\",\n    \"teamLeadFirstName\": \"333\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3010/companies/:comapanyId/teams",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"companies",
+						":comapanyId",
+						"teams"
+					],
+					"variable": [
+						{
+							"key": "comapanyId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List teams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3010/teams",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
